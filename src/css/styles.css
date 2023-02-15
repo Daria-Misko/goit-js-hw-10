@@ -18,3 +18,38 @@ body {
   max-width: 320px;
   margin-bottom: 16px;
 }
+
+.country-list {
+  list-style: none;
+  margin-left: -35px;
+}
+.country_item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.country_item:last-child {
+  margin-bottom: 0;
+}
+.flag {
+  width: 40px;
+  height: 100%;
+}
+.country_name {
+  margin-left: 5px;
+  font-size: 14px;
+}
+.wrapper {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-bottom: 25px;
+}
+.country_name_single {
+  font-weight: 800;
+  font-size: 16px;
+  text-align: center;
+}
+.country_card_sub {
+  font-weight: 700;
+}

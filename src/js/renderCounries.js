@@ -15,23 +15,24 @@ export default function renderCounries(dataCountries) {
 	} else if (quantityCountries >= 2 && quantityCountries <= 10) {
 		dataCountries.map(country => {
 			countryItems.push(`
-			<li>
-				<img src="${country.flags.svg}" alt="flag" width=40/>
-				<span>${country.name.official}</span>
+			<li class="country_item">
+				<img src="${country.flags.svg}" alt="flag" class="flag"/>
+				<span class="country_name">${country.name.official}</span>
 			</li>
 			`)
 		})
-		countryList.innerHTML = countryItems;
+		countryList.innerHTML = countryItems.join('');
 		countyInfo.innerHTML = '';
 
-		// countryList.insertAdjacentElement
 	} else {
-		countyInfo.innerHTML = `<img src="${currentCountry.flags.svg}" alt="flag" width=40/>
-			<span>${currentCountry.name.official}</span>
-			<div>
-			<p>Capital: ${currentCountry.capital}</p>
-			<p>Population: ${currentCountry.population}</p>
-			<p>Languages: ${Object.values(currentCountry.languages).join(', ')}</p>
+		countyInfo.innerHTML = `
+		<div class="wrapper"><img src="${currentCountry.flags.svg}" alt="flag" width=40/>
+			<span class="country_name_single">${currentCountry.name.official}</span>
+			</div>
+			<div class="country_card">
+			<p><span class="country_card_sub">Capital:</span> ${currentCountry.capital}</p>
+			<p><span class="country_card_sub">Population:</span> ${currentCountry.population}</p>
+			<p><span class="country_card_sub">Languages:</span> ${Object.values(currentCountry.languages).join(', ')}</p>
 			</div>
 		`;
 
